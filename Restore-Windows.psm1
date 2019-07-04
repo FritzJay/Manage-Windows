@@ -137,10 +137,10 @@ function Start-ApplicationProcess {
   
   Write-Debug "Starting a new process for '$Path'."
   if ($Arguments.Count -gt 0) {
-    Start-Process -FilePath $Path -ArgumentList $Arguments
+    Start-Process -FilePath $Path -ArgumentList $Arguments | Out-Null
   }
   else {
-    Start-Process -FilePath $Path
+    Start-Process -FilePath $Path | Out-Null
   }
 }
 
