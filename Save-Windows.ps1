@@ -1,3 +1,5 @@
+. "$PSScriptRoot/Get-Windows.ps1"
+
 $JSONDirectory = "$($env:APPDATA)\ManageWindows"
 $JSONPath = "$JSONDirectory\SavedWindows.json"
 
@@ -23,4 +25,4 @@ Function Save-Windows {
   $SavedWindows | ConvertTo-Json | Out-File -FilePath $JSONPath
 }
 
-Export-ModuleMember -Function Save-Windows
+Export-ModuleMember -Function Save-Windows -Variable $JSONDirectory, $JSONPath
